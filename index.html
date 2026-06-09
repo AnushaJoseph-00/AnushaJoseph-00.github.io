@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Celes Anusha Joseph Kumar</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #58a6ff;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #f0f6fc;
+      margin-bottom: 8px;
+    }
+
+    header p.tagline {
+      font-size: 1rem;
+      color: #58a6ff;
+      margin-bottom: 12px;
+    }
+
+    header p.location {
+      font-size: 0.9rem;
+      color: #8b949e;
+    }
+
+    .badges {
+      margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .badge {
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      color: #58a6ff;
+    }
+
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      padding: 8px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+    }
+
+    .social-links a:hover {
+      border-color: #58a6ff;
+      color: #58a6ff;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      color: #f0f6fc;
+      border-bottom: 1px solid #30363d;
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+    }
+
+    .about p {
+      color: #c9d1d9;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .skills-group {
+      margin-bottom: 20px;
+    }
+
+    .skills-group h3 {
+      font-size: 0.85rem;
+      color: #8b949e;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 0.85rem;
+      color: #c9d1d9;
+    }
+
+    .project-card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: #58a6ff;
+    }
+
+    .project-card h3 {
+      font-size: 1rem;
+      color: #58a6ff;
+      margin-bottom: 6px;
+    }
+
+    .project-card h3 a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    .project-card h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .project-card .stack {
+      font-size: 0.8rem;
+      color: #8b949e;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: #c9d1d9;
+    }
+
+    .timeline-item {
+      border-left: 2px solid #30363d;
+      padding-left: 20px;
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: #58a6ff;
+      border-radius: 50%;
+      position: absolute;
+      left: -6px;
+      top: 5px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1rem;
+      color: #f0f6fc;
+      margin-bottom: 2px;
+    }
+
+    .timeline-item .subtitle {
+      font-size: 0.85rem;
+      color: #58a6ff;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item .date {
+      font-size: 0.8rem;
+      color: #8b949e;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p {
+      font-size: 0.9rem;
+      color: #c9d1d9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid #30363d;
+      font-size: 0.85rem;
+      color: #8b949e;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      main { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="images/profile.jpg" alt="Celes Anusha Joseph Kumar" 
+       onerror="this.src='https://avatars.githubusercontent.com/AnushaJoseph-00'"/>
+  <h1>Celes Anusha Joseph Kumar</h1>
+  <p class="tagline">MSc Graduate | Data Science · ML · DevOps & Cloud · MLOps</p>
+  <p class="location">📍 Auckland, New Zealand · Open to work 🇳🇿</p>
+
+  <div class="badges">
+    <span class="badge">Data Science</span>
+    <span class="badge">ML Research</span>
+    <span class="badge">DevOps & Cloud</span>
+    <span class="badge">MLOps</span>
+    <span class="badge">AI Engineering</span>
+  </div>
+
+  <div class="social-links">
+    <a href="https://github.com/AnushaJoseph-00" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/celes-anusha-joseph-8237532b9/" target="_blank">LinkedIn</a>
+    <a href="mailto:celesanusha.joseph@gmail.com">Email</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- About -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      Graduate in Computer and Information Sciences from Auckland University of Technology.
+      Started as an Electrical Engineer — the curiosity about how systems work led me
+      naturally toward software and data.
+    </p>
+    <p>
+      I made a deliberate shift into tech, and my MSc became the foundation that brought
+      it all together. My thesis focused on predicting agitation in dementia patients
+      using deep learning (LSTM/GRU) on wearable physiological sensor data — work at
+      the intersection of AI and real-world impact.
+    </p>
+    <p>
+      Since graduating, I have been expanding beyond my degree — independently building
+      skills in DevOps and MLOps because I believe the gap between a good model and a
+      production system is where the real engineering happens.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>Tech Stack</h2>
+
+    <div class="skills-group">
+      <h3>Cloud & DevOps</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Linux/Bash</span>
+        <span class="skill-tag">Docker</span>
+        <span class="skill-tag">Kubernetes</span>
+        <span class="skill-tag">GitHub Actions</span>
+        <span class="skill-tag">Azure DevOps</span>
+        <span class="skill-tag">Terraform</span>
+        <span class="skill-tag">Azure Databricks</span>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <h3>ML & Data</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">TensorFlow</span>
+        <span class="skill-tag">PyTorch</span>
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">PySpark</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Pandas</span>
+      </div>
+    </div>
+
+    <div class="skills-group">
+      <h3>Visualisation & Tools</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Streamlit</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">LangChain</span>
+        <span class="skill-tag">ChromaDB</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section>
+    <h2>Projects</h2>
+
+    <div class="project-card">
+      <h3><a href="https://github.com/AnushaJoseph-00/Real_Time_Flight_Analysis_Dashboard" target="_blank">Real-Time Flight Analysis Dashboard</a></h3>
+      <p class="stack">Python · Power BI · OpenSky Network API</p>
+      <p>Real-time flight monitoring dashboard using OpenSky Network API. Live data visualised through an interactive Power BI dashboard.</p>
+    </div>
+
+    <div class="project-card">
+      <h3><a href="https://github.com/AnushaJoseph-00/Customer_Segmentation_Project" target="_blank">Customer Segmentation App</a></h3>
+      <p class="stack">Python · Scikit-learn · Streamlit</p>
+      <p>Customer segmentation web app that clusters customer data and presents insights through an interactive Streamlit dashboard.</p>
+    </div>
+
+    <div class="project-card">
+      <h3><a href="https://github.com/AnushaJoseph-00/End-to-End-Airbnb-Data-Analysis" target="_blank">Azure Databricks Medallion Pipeline</a></h3>
+      <p class="stack">Azure Databricks · PySpark · Python</p>
+      <p>End-to-end data engineering pipeline on Airbnb dataset using Azure Databricks medallion architecture.</p>
+    </div>
+
+    <div class="project-card">
+      <h3><a href="https://github.com/AnushaJoseph-00/Cryptocurrency-Analysis-Dashboard_PowerBI" target="_blank">Cryptocurrency Analysis Dashboard</a></h3>
+      <p class="stack">Power BI</p>
+      <p>Interactive Power BI dashboard for real-time cryptocurrency data analysis.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>DevOps Projects</h3>
+      <p class="stack">Docker · Kubernetes · Terraform · GitHub Actions</p>
+      <p>Currently building DevOps projects — more coming soon 🚀</p>
+    </div>
+
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <h2>Experience</h2>
+    <div class="timeline-item">
+      <h3>Salcomp Technologies</h3>
+      <p class="subtitle">Quality Control Analyst</p>
+      <p class="date">November 2021 — December 2023</p>
+      <p>Conducted reliability and functional testing on Apple chargers. Maintained defect logs and identified shift-correlated defect patterns through independent Excel analysis, leading to a process change.</p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section>
+    <h2>Education</h2>
+    <div class="timeline-item">
+      <h3>Auckland University of Technology (AUT)</h3>
+      <p class="subtitle">MSc Computer and Information Science — First Class Honours</p>
+      <p class="date">2024 — 2025</p>
+      <p>Thesis: Predicting agitation in dementia patients using deep learning (LSTM/GRU) on wearable physiological sensor data.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Anna University, India</h3>
+      <p class="subtitle">Bachelor of Engineering — Electrical and Electronics — First Class Honours</p>
+      <p class="date">2017 — 2021</p>
+      <p>Undergraduate degree in Electrical and Electronics Engineering.</p>
+    </div>
+  </section>
+
+  <!-- Let's Connect -->
+  <section>
+    <h2>Let's Connect</h2>
+    <p style="margin-bottom:16px;">
+      Are you working in DevOps, MLOps, Data Science or AI? Let's talk! Always happy
+      to exchange ideas, collaborate, or just have a good tech chat ☕
+    </p>
+    <div class="social-links" style="justify-content:flex-start;">
+      <a href="https://www.linkedin.com/in/celes-anusha-joseph-8237532b9/" target="_blank">LinkedIn</a>
+      <a href="mailto:celesanusha.joseph@gmail.com">Email Me</a>
+      <a href="https://github.com/AnushaJoseph-00" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Celes Anusha Joseph Kumar · MSc First Class Honours, AUT 2025</p>
+  <p style="margin-top:6px;">NZ Resident Visa (full working rights) · Volunteer @ Migrant in Tech & Hospice West Auckland</p>
+</footer>
+
+</body>
+</html>
