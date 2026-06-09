@@ -9,120 +9,188 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #0d1117;
-      color: #c9d1d9;
+      background: #0a0a0a;
+      color: #e0e0e0;
       line-height: 1.7;
     }
 
+    /* Animated gradient header */
     header {
-      background: #161b22;
-      border-bottom: 1px solid #30363d;
-      padding: 60px 20px;
+      background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe);
+      background-size: 400% 400%;
+      animation: gradientShift 8s ease infinite;
+      padding: 80px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     header img {
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       border-radius: 50%;
-      border: 3px solid #58a6ff;
+      border: 4px solid #fff;
       margin-bottom: 20px;
       object-fit: cover;
+      box-shadow: 0 0 30px rgba(255,255,255,0.3);
     }
 
     header h1 {
-      font-size: 2rem;
-      color: #f0f6fc;
+      font-size: 2.2rem;
+      color: #ffffff;
       margin-bottom: 8px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
     header p.tagline {
       font-size: 1rem;
-      color: #58a6ff;
-      margin-bottom: 12px;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 8px;
     }
 
     header p.location {
       font-size: 0.9rem;
-      color: #8b949e;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 24px;
     }
 
     .badges {
-      margin: 20px 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
+      margin-bottom: 24px;
     }
 
     .badge {
-      background: #21262d;
-      border: 1px solid #30363d;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
       border-radius: 20px;
-      padding: 6px 14px;
+      padding: 6px 16px;
       font-size: 0.8rem;
-      color: #58a6ff;
+      color: #fff;
     }
 
     .social-links {
-      margin-top: 20px;
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .social-links a {
-      background: #21262d;
-      border: 1px solid #30363d;
-      color: #c9d1d9;
-      padding: 8px 20px;
-      border-radius: 6px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 25px;
       text-decoration: none;
       font-size: 0.9rem;
-      transition: border-color 0.2s;
+      font-weight: 500;
+      transition: all 0.3s;
     }
 
     .social-links a:hover {
-      border-color: #58a6ff;
-      color: #58a6ff;
+      background: rgba(255,255,255,0.35);
+      transform: translateY(-2px);
     }
 
+    /* Navigation dots */
+    nav {
+      background: #111;
+      padding: 16px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #222;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 16px;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: #fff; }
+
     main {
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
     section {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .section-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
     }
 
     section h2 {
-      font-size: 1.3rem;
-      color: #f0f6fc;
-      border-bottom: 1px solid #30363d;
-      padding-bottom: 10px;
-      margin-bottom: 24px;
+      font-size: 1.4rem;
+      color: #ffffff;
     }
 
-    .about p {
+    /* About */
+    .about-box {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      border: 1px solid #2a2a5a;
+      border-radius: 16px;
+      padding: 28px;
+      border-left: 4px solid #667eea;
+    }
+
+    .about-box p {
       color: #c9d1d9;
       font-size: 0.95rem;
       margin-bottom: 12px;
     }
 
+    .about-box p:last-child { margin-bottom: 0; }
+
+    /* Skills */
     .skills-group {
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .skills-group h3 {
-      font-size: 0.85rem;
-      color: #8b949e;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      display: inline-block;
     }
+
+    .h3-devops { background: #1a3a5c; color: #4facfe; }
+    .h3-ml { background: #2d1b4e; color: #b47aff; }
+    .h3-viz { background: #1a3a2a; color: #00f2a9; }
 
     .skill-tags {
       display: flex;
@@ -131,125 +199,222 @@
     }
 
     .skill-tag {
-      background: #21262d;
-      border: 1px solid #30363d;
-      border-radius: 6px;
-      padding: 5px 12px;
-      font-size: 0.85rem;
-      color: #c9d1d9;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: transform 0.2s;
+      cursor: default;
+    }
+
+    .skill-tag:hover { transform: translateY(-2px); }
+
+    .tag-blue { background: #0d2137; color: #4facfe; border: 1px solid #1a4a7a; }
+    .tag-purple { background: #1a0d2e; color: #b47aff; border: 1px solid #4a2a7a; }
+    .tag-green { background: #0d1f15; color: #00f2a9; border: 1px solid #1a5a3a; }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
     .project-card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 10px;
-      padding: 20px 24px;
-      margin-bottom: 16px;
-      transition: border-color 0.2s;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
     }
 
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
+    .card-blue::before { background: linear-gradient(90deg, #4facfe, #00f2fe); }
+    .card-purple::before { background: linear-gradient(90deg, #667eea, #764ba2); }
+    .card-pink::before { background: linear-gradient(90deg, #f093fb, #f5576c); }
+    .card-green::before { background: linear-gradient(90deg, #43e97b, #38f9d7); }
+    .card-orange::before { background: linear-gradient(90deg, #fa8231, #f7b731); }
+
     .project-card:hover {
-      border-color: #58a6ff;
+      border-color: #444;
+      transform: translateY(-4px);
+    }
+
+    .project-emoji {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      display: block;
     }
 
     .project-card h3 {
       font-size: 1rem;
-      color: #58a6ff;
+      color: #fff;
       margin-bottom: 6px;
     }
 
     .project-card h3 a {
-      color: #58a6ff;
+      color: #fff;
       text-decoration: none;
     }
 
-    .project-card h3 a:hover {
-      text-decoration: underline;
-    }
+    .project-card h3 a:hover { color: #4facfe; }
 
-    .project-card .stack {
-      font-size: 0.8rem;
-      color: #8b949e;
-      margin-bottom: 8px;
+    .project-stack {
+      font-size: 0.78rem;
+      color: #666;
+      margin-bottom: 10px;
     }
 
     .project-card p {
-      font-size: 0.9rem;
-      color: #c9d1d9;
+      font-size: 0.88rem;
+      color: #aaa;
+      line-height: 1.6;
     }
 
+    /* Timeline */
     .timeline-item {
-      border-left: 2px solid #30363d;
-      padding-left: 20px;
-      margin-bottom: 28px;
-      position: relative;
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 16px;
+      border-left: 4px solid;
+      transition: transform 0.2s;
     }
 
-    .timeline-item::before {
-      content: '';
-      width: 10px;
-      height: 10px;
-      background: #58a6ff;
-      border-radius: 50%;
-      position: absolute;
-      left: -6px;
-      top: 5px;
-    }
+    .timeline-item:hover { transform: translateX(4px); }
+    .border-blue { border-left-color: #4facfe; }
+    .border-purple { border-left-color: #764ba2; }
+    .border-green { border-left-color: #43e97b; }
 
     .timeline-item h3 {
       font-size: 1rem;
-      color: #f0f6fc;
-      margin-bottom: 2px;
+      color: #fff;
+      margin-bottom: 4px;
     }
 
     .timeline-item .subtitle {
       font-size: 0.85rem;
-      color: #58a6ff;
       margin-bottom: 4px;
     }
 
+    .sub-blue { color: #4facfe; }
+    .sub-purple { color: #b47aff; }
+    .sub-green { color: #43e97b; }
+
     .timeline-item .date {
       font-size: 0.8rem;
-      color: #8b949e;
-      margin-bottom: 8px;
+      color: #555;
+      margin-bottom: 10px;
     }
 
     .timeline-item p {
+      font-size: 0.88rem;
+      color: #aaa;
+    }
+
+    /* Connect */
+    .connect-box {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .connect-box h3 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .connect-box p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .connect-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .connect-list span {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      color: #fff;
+    }
+
+    .connect-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .connect-buttons a {
+      background: #fff;
+      color: #764ba2;
+      padding: 10px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
       font-size: 0.9rem;
-      color: #c9d1d9;
+      transition: all 0.3s;
+    }
+
+    .connect-buttons a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
-      border-top: 1px solid #30363d;
+      padding: 40px 20px;
+      border-top: 1px solid #1a1a1a;
       font-size: 0.85rem;
-      color: #8b949e;
+      color: #555;
+    }
+
+    footer span {
+      color: #667eea;
     }
 
     @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      main { padding: 24px 16px; }
+      header h1 { font-size: 1.6rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      nav a { margin: 0 8px; font-size: 0.78rem; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="images/profile.jpg" alt="Celes Anusha Joseph Kumar" 
+  <img src="images/profile.jpg" alt="Celes Anusha"
        onerror="this.src='https://avatars.githubusercontent.com/AnushaJoseph-00'"/>
   <h1>Celes Anusha Joseph Kumar</h1>
   <p class="tagline">MSc Graduate | Data Science · ML · DevOps & Cloud · MLOps</p>
   <p class="location">📍 Auckland, New Zealand · Open to work 🇳🇿</p>
-
   <div class="badges">
-    <span class="badge">Data Science</span>
-    <span class="badge">ML Research</span>
-    <span class="badge">DevOps & Cloud</span>
-    <span class="badge">MLOps</span>
-    <span class="badge">AI Engineering</span>
+    <span class="badge">🎓 MSc First Class Honours</span>
+    <span class="badge">📊 Data Science</span>
+    <span class="badge">🤖 ML Research</span>
+    <span class="badge">☁️ DevOps & Cloud</span>
+    <span class="badge">🚀 MLOps</span>
   </div>
-
   <div class="social-links">
     <a href="https://github.com/AnushaJoseph-00" target="_blank">GitHub</a>
     <a href="https://www.linkedin.com/in/celes-anusha-joseph-8237532b9/" target="_blank">LinkedIn</a>
@@ -257,156 +422,183 @@
   </div>
 </header>
 
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#education">Education</a>
+  <a href="#connect">Connect</a>
+</nav>
+
 <main>
 
   <!-- About -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>
-      Graduate in Computer and Information Sciences from Auckland University of Technology.
-      Started as an Electrical Engineer — the curiosity about how systems work led me
-      naturally toward software and data.
-    </p>
-    <p>
-      I made a deliberate shift into tech, and my MSc became the foundation that brought
-      it all together. My thesis focused on predicting agitation in dementia patients
-      using deep learning (LSTM/GRU) on wearable physiological sensor data — work at
-      the intersection of AI and real-world impact.
-    </p>
-    <p>
-      Since graduating, I have been expanding beyond my degree — independently building
-      skills in DevOps and MLOps because I believe the gap between a good model and a
-      production system is where the real engineering happens.
-    </p>
+  <section id="about">
+    <div class="section-header">
+      <div class="section-icon" style="background:#1a1a4a;">👩‍💻</div>
+      <h2>About Me</h2>
+    </div>
+    <div class="about-box">
+      <p>Graduate in Computer and Information Sciences from Auckland University of Technology. Started as an Electrical Engineer — the curiosity about how systems work led me naturally toward software and data.</p>
+      <p>I made a deliberate shift into tech, and my MSc became the foundation that brought it all together. My thesis focused on predicting agitation in dementia patients using deep learning (LSTM/GRU) on wearable physiological sensor data — work at the intersection of AI and real-world impact.</p>
+      <p>Since graduating, I have been expanding beyond my degree — independently building skills in DevOps and MLOps because I believe the gap between a good model and a production system is where the real engineering happens.</p>
+    </div>
   </section>
 
   <!-- Skills -->
-  <section>
-    <h2>Tech Stack</h2>
+  <section id="skills">
+    <div class="section-header">
+      <div class="section-icon" style="background:#1a0d2e;">🛠️</div>
+      <h2>Tech Stack</h2>
+    </div>
 
     <div class="skills-group">
-      <h3>Cloud & DevOps</h3>
+      <h3 class="h3-devops">Cloud & DevOps</h3>
       <div class="skill-tags">
-        <span class="skill-tag">Linux/Bash</span>
-        <span class="skill-tag">Docker</span>
-        <span class="skill-tag">Kubernetes</span>
-        <span class="skill-tag">GitHub Actions</span>
-        <span class="skill-tag">Azure DevOps</span>
-        <span class="skill-tag">Terraform</span>
-        <span class="skill-tag">Azure Databricks</span>
+        <span class="skill-tag tag-blue">Linux/Bash</span>
+        <span class="skill-tag tag-blue">Docker</span>
+        <span class="skill-tag tag-blue">Kubernetes</span>
+        <span class="skill-tag tag-blue">GitHub Actions</span>
+        <span class="skill-tag tag-blue">Azure DevOps</span>
+        <span class="skill-tag tag-blue">Terraform</span>
+        <span class="skill-tag tag-blue">Azure Databricks</span>
       </div>
     </div>
 
     <div class="skills-group">
-      <h3>ML & Data</h3>
+      <h3 class="h3-ml">ML & Data</h3>
       <div class="skill-tags">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">R</span>
-        <span class="skill-tag">TensorFlow</span>
-        <span class="skill-tag">PyTorch</span>
-        <span class="skill-tag">Scikit-learn</span>
-        <span class="skill-tag">PySpark</span>
-        <span class="skill-tag">NumPy</span>
-        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag tag-purple">Python</span>
+        <span class="skill-tag tag-purple">SQL</span>
+        <span class="skill-tag tag-purple">R</span>
+        <span class="skill-tag tag-purple">TensorFlow</span>
+        <span class="skill-tag tag-purple">PyTorch</span>
+        <span class="skill-tag tag-purple">Scikit-learn</span>
+        <span class="skill-tag tag-purple">PySpark</span>
+        <span class="skill-tag tag-purple">NumPy</span>
+        <span class="skill-tag tag-purple">Pandas</span>
       </div>
     </div>
 
     <div class="skills-group">
-      <h3>Visualisation & Tools</h3>
+      <h3 class="h3-viz">Visualisation & Tools</h3>
       <div class="skill-tags">
-        <span class="skill-tag">Power BI</span>
-        <span class="skill-tag">Streamlit</span>
-        <span class="skill-tag">Tableau</span>
-        <span class="skill-tag">LangChain</span>
-        <span class="skill-tag">ChromaDB</span>
+        <span class="skill-tag tag-green">Power BI</span>
+        <span class="skill-tag tag-green">Streamlit</span>
+        <span class="skill-tag tag-green">Tableau</span>
+        <span class="skill-tag tag-green">LangChain</span>
+        <span class="skill-tag tag-green">ChromaDB</span>
       </div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section>
-    <h2>Projects</h2>
-
-    <div class="project-card">
-      <h3><a href="https://github.com/AnushaJoseph-00/Real_Time_Flight_Analysis_Dashboard" target="_blank">Real-Time Flight Analysis Dashboard</a></h3>
-      <p class="stack">Python · Power BI · OpenSky Network API</p>
-      <p>Real-time flight monitoring dashboard using OpenSky Network API. Live data visualised through an interactive Power BI dashboard.</p>
+  <section id="projects">
+    <div class="section-header">
+      <div class="section-icon" style="background:#1a2a1a;">🚀</div>
+      <h2>Projects</h2>
     </div>
+    <div class="projects-grid">
 
-    <div class="project-card">
-      <h3><a href="https://github.com/AnushaJoseph-00/Customer_Segmentation_Project" target="_blank">Customer Segmentation App</a></h3>
-      <p class="stack">Python · Scikit-learn · Streamlit</p>
-      <p>Customer segmentation web app that clusters customer data and presents insights through an interactive Streamlit dashboard.</p>
+      <div class="project-card card-blue">
+        <span class="project-emoji">✈️</span>
+        <h3><a href="https://github.com/AnushaJoseph-00/Real_Time_Flight_Analysis_Dashboard" target="_blank">Real-Time Flight Dashboard</a></h3>
+        <p class="project-stack">Python · Power BI · OpenSky Network API</p>
+        <p>Real-time flight monitoring dashboard using OpenSky Network API with live data visualised in Power BI.</p>
+      </div>
+
+      <div class="project-card card-purple">
+        <span class="project-emoji">👥</span>
+        <h3><a href="https://github.com/AnushaJoseph-00/Customer_Segmentation_Project" target="_blank">Customer Segmentation App</a></h3>
+        <p class="project-stack">Python · Scikit-learn · Streamlit</p>
+        <p>Web app that clusters customer data and presents insights through an interactive Streamlit dashboard.</p>
+      </div>
+
+      <div class="project-card card-green">
+        <span class="project-emoji">🏠</span>
+        <h3><a href="https://github.com/AnushaJoseph-00/End-to-End-Airbnb-Data-Analysis" target="_blank">Azure Databricks Pipeline</a></h3>
+        <p class="project-stack">Azure Databricks · PySpark · Python</p>
+        <p>End-to-end data engineering pipeline on Airbnb dataset using Azure Databricks medallion architecture.</p>
+      </div>
+
+      <div class="project-card card-orange">
+        <span class="project-emoji">📈</span>
+        <h3><a href="https://github.com/AnushaJoseph-00/Cryptocurrency-Analysis-Dashboard_PowerBI" target="_blank">Cryptocurrency Dashboard</a></h3>
+        <p class="project-stack">Power BI</p>
+        <p>Interactive Power BI dashboard for real-time cryptocurrency data analysis.</p>
+      </div>
+
+      <div class="project-card card-pink">
+        <span class="project-emoji">⚙️</span>
+        <h3>DevOps Projects</h3>
+        <p class="project-stack">Docker · Kubernetes · Terraform · GitHub Actions</p>
+        <p>Currently building DevOps projects — more coming soon! 🚀</p>
+      </div>
+
     </div>
-
-    <div class="project-card">
-      <h3><a href="https://github.com/AnushaJoseph-00/End-to-End-Airbnb-Data-Analysis" target="_blank">Azure Databricks Medallion Pipeline</a></h3>
-      <p class="stack">Azure Databricks · PySpark · Python</p>
-      <p>End-to-end data engineering pipeline on Airbnb dataset using Azure Databricks medallion architecture.</p>
-    </div>
-
-    <div class="project-card">
-      <h3><a href="https://github.com/AnushaJoseph-00/Cryptocurrency-Analysis-Dashboard_PowerBI" target="_blank">Cryptocurrency Analysis Dashboard</a></h3>
-      <p class="stack">Power BI</p>
-      <p>Interactive Power BI dashboard for real-time cryptocurrency data analysis.</p>
-    </div>
-
-    <div class="project-card">
-      <h3>DevOps Projects</h3>
-      <p class="stack">Docker · Kubernetes · Terraform · GitHub Actions</p>
-      <p>Currently building DevOps projects — more coming soon 🚀</p>
-    </div>
-
   </section>
 
   <!-- Experience -->
-  <section>
-    <h2>Experience</h2>
-    <div class="timeline-item">
+  <section id="experience">
+    <div class="section-header">
+      <div class="section-icon" style="background:#1a2a1a;">💼</div>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline-item border-blue">
       <h3>Salcomp Technologies</h3>
-      <p class="subtitle">Quality Control Analyst</p>
+      <p class="subtitle sub-blue">Quality Control Analyst</p>
       <p class="date">November 2021 — December 2023</p>
-      <p>Conducted reliability and functional testing on Apple chargers. Maintained defect logs and identified shift-correlated defect patterns through independent Excel analysis, leading to a process change.</p>
+      <p>Conducted reliability and functional testing on Apple chargers. Identified shift-correlated defect patterns through independent Excel analysis, leading to a process change.</p>
     </div>
   </section>
 
   <!-- Education -->
-  <section>
-    <h2>Education</h2>
-    <div class="timeline-item">
+  <section id="education">
+    <div class="section-header">
+      <div class="section-icon" style="background:#1a1a4a;">🎓</div>
+      <h2>Education</h2>
+    </div>
+    <div class="timeline-item border-purple">
       <h3>Auckland University of Technology (AUT)</h3>
-      <p class="subtitle">MSc Computer and Information Science — First Class Honours</p>
+      <p class="subtitle sub-purple">MSc Computer and Information Science — First Class Honours</p>
       <p class="date">2024 — 2025</p>
       <p>Thesis: Predicting agitation in dementia patients using deep learning (LSTM/GRU) on wearable physiological sensor data.</p>
     </div>
-    <div class="timeline-item">
+    <div class="timeline-item border-green">
       <h3>Anna University, India</h3>
-      <p class="subtitle">Bachelor of Engineering — Electrical and Electronics — First Class Honours</p>
+      <p class="subtitle sub-green">Bachelor of Engineering — Electrical and Electronics — First Class Honours</p>
       <p class="date">2017 — 2021</p>
       <p>Undergraduate degree in Electrical and Electronics Engineering.</p>
     </div>
   </section>
 
-  <!-- Let's Connect -->
-  <section>
-    <h2>Let's Connect</h2>
-    <p style="margin-bottom:16px;">
-      Are you working in DevOps, MLOps, Data Science or AI? Let's talk! Always happy
-      to exchange ideas, collaborate, or just have a good tech chat ☕
-    </p>
-    <div class="social-links" style="justify-content:flex-start;">
-      <a href="https://www.linkedin.com/in/celes-anusha-joseph-8237532b9/" target="_blank">LinkedIn</a>
-      <a href="mailto:celesanusha.joseph@gmail.com">Email Me</a>
-      <a href="https://github.com/AnushaJoseph-00" target="_blank">GitHub</a>
+  <!-- Connect -->
+  <section id="connect">
+    <div class="connect-box">
+      <h3>🤝 Let's Connect!</h3>
+      <p>Are you working in any of these areas? Let's talk!</p>
+      <div class="connect-list">
+        <span>🚀 DevOps & Cloud</span>
+        <span>🤖 MLOps & AI</span>
+        <span>📊 Data Science</span>
+        <span>🌱 Career shifters in tech</span>
+        <span>🌏 Migrant tech community NZ</span>
+      </div>
+      <p>Always happy to exchange ideas, collaborate, or just have a good tech chat ☕</p>
+      <div class="connect-buttons">
+        <a href="https://www.linkedin.com/in/celes-anusha-joseph-8237532b9/" target="_blank">LinkedIn</a>
+        <a href="mailto:celesanusha.joseph@gmail.com">Email Me</a>
+        <a href="https://github.com/AnushaJoseph-00" target="_blank">GitHub</a>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <p>Celes Anusha Joseph Kumar · MSc First Class Honours, AUT 2025</p>
-  <p style="margin-top:6px;">NZ Resident Visa (full working rights) · Volunteer @ Migrant in Tech & Hospice West Auckland</p>
+  <p>Made with ❤️ by <span>Celes Anusha Joseph Kumar</span></p>
+  <p style="margin-top:6px;">MSc First Class Honours, AUT 2025 · NZ Resident Visa · Volunteer @ Migrant in Tech & Hospice West Auckland</p>
 </footer>
 
 </body>
